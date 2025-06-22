@@ -5,7 +5,9 @@ const io = require("socket.io")(http);
 const fs = require("fs");
 const path = require("path");
 
-app.use(express.static("public"));
+app.get("/", (req, res) => {
+  res.sendFile("abistreich2025/public/index.html");
+});
 
 let spieler = {};
 let tipps = {};
@@ -151,7 +153,7 @@ io.on("connection", (socket) => {
 });
 
 app.get("/admin", (req, res) => {
-  res.sendFile(__dirname + "/public/admin.html");
+  res.sendFile("abistreich2025/public/admin.html");
 });
 
 const PORT = process.env.PORT || 3000;
