@@ -5,6 +5,8 @@ const io = require("socket.io")(http);
 const fs = require("fs");
 const path = require("path");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
