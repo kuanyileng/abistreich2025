@@ -150,17 +150,8 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/admin-login", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "admin-login.html"));
-});
-
 app.get("/admin", (req, res) => {
-  const password = req.query.pw;
-  if (password === "abikalypse2025") {
-    res.sendFile(path.join(__dirname, "public", "admin.html"));
-  } else {
-    res.redirect("/admin-login");
-  }
+  res.sendFile(__dirname + "/public/admin.html");
 });
 
 const PORT = process.env.PORT || 3000;
