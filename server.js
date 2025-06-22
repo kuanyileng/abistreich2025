@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 app.get("/", (req, res) => {
-  res.sendFile("abistreich2025/public/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 let spieler = {};
@@ -153,7 +153,7 @@ io.on("connection", (socket) => {
 });
 
 app.get("/admin", (req, res) => {
-  res.sendFile("abistreich2025/public/admin.html");
+  res.sendFile(__dirname + "/public/admin.html");
 });
 
 const PORT = process.env.PORT || 3000;
